@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="./src/styles.css" />
+    <style>
+      :root {
+        --beverage: #999999;
+      }
+    </style>
+    <script>
+      function get_beverage(value) {
+        var r = document.querySelector(":root");
+        var el = document.getElementById("beverage");
+        el.style.animation = "none";
+        el.offsetHeight;
+        el.style.animation = null;
+        if (value === "coffee") {
+          r.style.setProperty("--beverage", "#8A624A");
+        } else if (value === "tea") {
+          r.style.setProperty("--beverage", "#c1734b");
+        } else {
+          r.style.setProperty("--beverage", "#683b39");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="cupContainer">
+        <div class="cupHolder"></div>
+        <div class="cupBody"></div>
+        <div id="beverage" class="coffee coffeeAnimation"></div>
+      </div>
+      <div class="btnsContainer">
+        <button
+          class="btnDiv"
+          type="button"
+          id="coffee"
+          onclick="get_beverage(this.id)"
+        >
+          Coffee
+        </button>
+        <button
+          class="btnDiv"
+          type="button"
+          id="tea"
+          onclick="get_beverage(this.id)"
+        >
+          Tea
+        </button>
+        <button
+          class="btnDiv"
+          type="button"
+          id="chocolate"
+          onclick="get_beverage(this.id)"
+        >
+          Hot Chocolate
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
